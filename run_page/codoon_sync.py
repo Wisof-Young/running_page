@@ -67,10 +67,10 @@ TCX_TYPE_DICT = {
 }
 
 # only for running sports, if you want others, please change the True to False
-IS_ONLY_RUN = True
+IS_ONLY_RUN = False
 
 # If your points need trans from gcj02 to wgs84 coordinate which use by Mappbox
-TRANS_GCJ02_TO_WGS84 = False
+TRANS_GCJ02_TO_WGS84 = True
 # trans the coordinate data until the TRANS_END_DATE, work with TRANS_GCJ02_TO_WGS84 = True
 TRANS_END_DATE = "2014-03-24"
 
