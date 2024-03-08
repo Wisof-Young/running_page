@@ -21,13 +21,13 @@ on:
 
 env:
   # please change to your own config.
-  RUN_TYPE: pass # support strava/nike/garmin/garmin_cn/garmin_sync_cn_global/keep/only_gpx/only_fit/nike_to_strava/strava_to_garmin/strava_to_garmin_cn/garmin_to_strava/garmin_to_strava_cn/codoon, Please change the 'pass' it to your own
-  ATHLETE: yihong0618
-  TITLE: Yihong0618 Running
+  RUN_TYPE: keep # support strava/nike/garmin/garmin_cn/garmin_sync_cn_global/keep/only_gpx/only_fit/nike_to_strava/strava_to_garmin/strava_to_garmin_cn/garmin_to_strava/garmin_to_strava_cn/codoon, Please change the 'pass' it to your own
+  ATHLETE: SAM0TA
+  TITLE: SAM0TA SPORTS
   MIN_GRID_DISTANCE: 10 # change min distance here
   TITLE_GRID: Over 10km Runs # also here
-  GITHUB_NAME: yihong0618 # change to yours
-  GITHUB_EMAIL: zouzou0208@gmail.com # change to yours
+  GITHUB_NAME: Wisof-Young # change to yours
+  GITHUB_EMAIL: yangruizhi4@outlook.com # change to yours
 
   # IGNORE_BEFORE_SAVING: True # if you want to ignore some data before saving, set this to True
   IGNORE_START_END_RANGE: 10 # Unit meter
@@ -198,12 +198,12 @@ jobs:
           echo "DATA_CACHE_PREFIX=${{ env.DATA_CACHE_PREFIX }}" >> "$GITHUB_OUTPUT"
           echo "BUILD_GH_PAGES=${{ env.BUILD_GH_PAGES }}" >> "$GITHUB_OUTPUT"
 
-  publish_github_pages:
-    if: needs.sync.result == 'success' && needs.sync.outputs.BUILD_GH_PAGES == 'true'
-    name: Build and publish Github Pages
-    uses: ./.github/workflows/gh-pages.yml
-    with:
-      save_data_in_github_cache: ${{needs.sync.outputs.SAVE_DATA_IN_GITHUB_CACHE == 'true'}}
-      data_cache_prefix: ${{needs.sync.outputs.DATA_CACHE_PREFIX}}
-    needs:
-      - sync
+  # publish_github_pages:
+  #   if: needs.sync.result == 'success' && needs.sync.outputs.BUILD_GH_PAGES == 'true'
+  #   name: Build and publish Github Pages
+  #   uses: ./.github/workflows/gh-pages.yml
+  #   with:
+  #     save_data_in_github_cache: ${{needs.sync.outputs.SAVE_DATA_IN_GITHUB_CACHE == 'true'}}
+  #     data_cache_prefix: ${{needs.sync.outputs.DATA_CACHE_PREFIX}}
+  #   needs:
+  #     - sync
